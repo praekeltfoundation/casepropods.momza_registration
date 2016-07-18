@@ -11,7 +11,8 @@ with open(os.path.join(here, 'VERSION')) as f:
 
 setup(name='casepro.pods.familyconnect',
       version=version,
-      description=('.'),
+      description=('FamilyConnect data pod for casepro. Returns case specific'
+                   ' information.'),
       long_description=readme,
       classifiers=[
           "Programming Language :: Python",
