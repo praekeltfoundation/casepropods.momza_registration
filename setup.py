@@ -9,10 +9,10 @@ with open(os.path.join(here, 'README.rst')) as f:
 with open(os.path.join(here, 'VERSION')) as f:
     version = f.read().strip()
 
-setup(name='casepro.pods.familyconnect',
+setup(name='casepropods.family_connect_registration',
       version=version,
-      description=('FamilyConnect data pod for casepro. Returns case specific'
-                   ' information.'),
+      description=('FamilyConnect registrations data pod for casepro. Returns '
+                   ' case specific registration information.'),
       long_description=readme,
       classifiers=[
           "Programming Language :: Python",
@@ -25,8 +25,8 @@ setup(name='casepro.pods.familyconnect',
       url='http://github.com/praekelt/casepro.pods.familyconnect',
       license='BSD',
       keywords='',
-      packages=find_packages(),
+      packages=['casepropods.family_connect_registration'],
       include_package_data=True,
       zip_safe=False,
-      namespace_packages=['casepro', 'casepro.pods'],
+      namespace_packages=['casepropods'],
       entry_points={})
