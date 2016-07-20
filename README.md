@@ -1,4 +1,5 @@
-casepro.pods.familyconnect
+casepropods.family_connect_registration
 ==========================
 
-FamilyConnect data pod for casepro. Returns case specific information.
+FamilyConnect registrations data pod for casepro. Returns case specific 
+registration information.
