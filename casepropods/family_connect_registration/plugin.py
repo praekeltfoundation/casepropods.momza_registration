@@ -1,8 +1,12 @@
+from confmodel import fields
 from casepro.pods import Pod, PodConfig, PodPlugin
 
 
 class RegistrationPodConfig(PodConfig):
-    pass
+    url = fields.ConfigText("URL to query for the registration data",
+                            required=True)
+    token = fields.ConfigText("Authentication token for registration endpoint",
+                              required=True)
 
 
 class RegistrationPod(Pod):
