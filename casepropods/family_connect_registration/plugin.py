@@ -11,6 +11,7 @@ class RegistrationPod(Pod):
 
 
 class RegistrationPlugin(PodPlugin):
+    name = 'casepropods.family_connect_registration'
     label = 'family_connect_registration_pod'
     pod_class = RegistrationPod
     config_class = RegistrationPodConfig
