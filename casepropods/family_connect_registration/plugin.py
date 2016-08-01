@@ -9,7 +9,7 @@ class RegistrationPodConfig(PodConfig):
                             required=True)
     token = fields.ConfigText("Authentication token for registration endpoint",
                               required=True)
-    field_mapping = fields.ConfigDict(
+    field_mapping = fields.ConfigList(
         "Mapping of field names to what should be displayed for them",
         required=True)
 
@@ -36,15 +36,15 @@ class RegistrationPod(Pod):
 
         content = {"items": []}
         for result in results:
-            for k in mapping:
-                if k in result:
-                    value = result[k]
-                elif k in result["data"]:
-                    value = result["data"][k]
+            for obj in mapping:
+                if obj["field"] in result:
+                    value = result[obj["field"]]
+                elif obj["field"] in result["data"]:
+                    value = result["data"][obj["field"]]
                 else:
                     value = "Unknown"
                 content['items'].append(
-                    {"name": mapping[k], "value": value})
+                    {"name": obj["field_name"], "value": value})
         return content
 
 

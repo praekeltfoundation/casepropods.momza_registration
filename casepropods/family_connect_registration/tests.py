@@ -24,21 +24,29 @@ class RegistrationPodTest(BaseCasesTest):
                     'title': "My registration Pod",
                     'url': "http://example.com/registration/",
                     'token': "test_token",
-                    'field_mapping': {
-                        "hoh_id": "Head of Household ID",
-                        "receiver_id": "Receiver ID",
-                        "operator_id": "Operator ID",
-                        "language": "Language Preference",
-                        "msg_type": "Receives Messages As",
-                        "last_period_date": "Date of last period",
-                        "msg_receiver": "Message Receiver",
-                        "hoh_name": "Head of Household Name",
-                        "hoh_surname": "Head of Household Surname",
-                        "mama_name": "Mother Name",
-                        "mama_surname": "Mother Surname",
-                        "mama_id_type": "ID Type",
-                        "mama_id_no": "ID Number"
-                    }
+                    'field_mapping': [
+                        {"field": "mama_name", "field_name": "Mother Name"},
+                        {"field": "mama_surname",
+                            "field_name": "Mother Surname"},
+                        {"field": "last_period_date",
+                            "field_name": "Date of last period"},
+                        {"field": "language",
+                            "field_name": "Language Preference"},
+                        {"field": "mama_id_type", "field_name": "ID Type"},
+                        {"field": "mama_id_no", "field_name": "ID Number"},
+                        {"field": "msg_receiver",
+                            "field_name": "Message Receiver"},
+                        {"field": "receiver_id", "field_name": "Receiver ID"},
+                        {"field": "hoh_name",
+                            "field_name": "Head of Household Name"},
+                        {"field": "hoh_surname",
+                            "field_name": "Head of Household Surname"},
+                        {"field": "hoh_id",
+                            "field_name": "Head of Household ID"},
+                        {"field": "operator_id", "field_name": "Operator ID"},
+                        {"field": "msg_type",
+                            "field_name": "Receives Messages As"},
+                    ]
                 }))
 
     def registration_callback_no_matches(self, request):
@@ -109,19 +117,20 @@ class RegistrationPodTest(BaseCasesTest):
         result = self.pod.read_data({'case_id': self.case.id})
 
         self.assertEqual(result, {"items": [
+            {"name": "Mother Name", "value": "sue"},
+            {"name": "Mother Surname", "value": "zin"},
+            {"name": "Date of last period", "value": "20150202"},
+            {"name": "Language Preference", "value": "eng_UG"},
+            {"name": "ID Type", "value": "ugandan_id"},
+            {"name": "ID Number", "value": "12345"},
+            {"name": "Message Receiver", "value": "head_of_household"},
+            {"name": "Receiver ID", "value":
+                "hoh00001-63e2-4acc-9b94-26663b9bc267"},
+            {"name": "Head of Household Name", "value": "bob"},
             {"name": "Head of Household Surname", "value": "the builder"},
             {"name": "Head of Household ID",
                 "value": "hoh00001-63e2-4acc-9b94-26663b9bc267"},
-            {"name": "Receiver ID", "value":
-                "hoh00001-63e2-4acc-9b94-26663b9bc267"},
             {"name": "Operator ID", "value":
                 "hcw00001-63e2-4acc-9b94-26663b9bc267"},
-            {"name": "Language Preference", "value": "eng_UG"},
             {"name": "Receives Messages As", "value": "text"},
-            {"name": "Head of Household Name", "value": "bob"},
-            {"name": "ID Number", "value": "12345"},
-            {"name": "Date of last period", "value": "20150202"},
-            {"name": "Mother Surname", "value": "zin"},
-            {"name": "ID Type", "value": "ugandan_id"},
-            {"name": "Message Receiver", "value": "head_of_household"},
-            {"name": "Mother Name", "value": "sue"}]})
+            ]})
