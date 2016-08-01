@@ -30,8 +30,8 @@ class RegistrationPod(Pod):
         # Get and format registration response
         r = requests.get(url, params={'mother_id': case.contact.uuid},
                          headers=headers)
+        r.raise_for_status()
         response = r.json()
-        # TODO: handle error if request fails
         results = response["results"]
 
         content = {"items": []}
