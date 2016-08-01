@@ -20,14 +20,16 @@ class RegistrationPod(Pod):
         url = self.config.url
         token = self.config.token
         mapping = self.config.field_mapping
-        session = requests.Session()
-        session.headers.update({'Authorization': "Token " + token})
-        session.headers.update({'Content-Type': "application/json"})
+        headers = {
+            'Authorization': "Token " + token,
+            'Content-Type': "application/json"
+        }
         case_id = params["case_id"]
         case = Case.objects.get(pk=case_id)
 
         # Get and format registration response
-        r = session.get(url, params={'mother_id': case.contact.uuid})
+        r = requests.get(url, params={'mother_id': case.contact.uuid},
+                         headers=headers)
         response = r.json()
         # TODO: handle error if request fails
         results = response["results"]
