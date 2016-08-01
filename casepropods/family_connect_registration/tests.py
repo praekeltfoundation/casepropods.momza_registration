@@ -110,9 +110,12 @@ class RegistrationPodTest(BaseCasesTest):
 
         self.assertEqual(result, {"items": [
             {"name": "Head of Household Surname", "value": "the builder"},
-            {"name": "Head of Household ID", "value": "hoh00001-63e2-4acc-9b94-26663b9bc267"},
-            {"name": "Receiver ID", "value": "hoh00001-63e2-4acc-9b94-26663b9bc267"},
-            {"name": "Operator ID", "value": "hcw00001-63e2-4acc-9b94-26663b9bc267"},
+            {"name": "Head of Household ID",
+                "value": "hoh00001-63e2-4acc-9b94-26663b9bc267"},
+            {"name": "Receiver ID", "value":
+                "hoh00001-63e2-4acc-9b94-26663b9bc267"},
+            {"name": "Operator ID", "value":
+                "hcw00001-63e2-4acc-9b94-26663b9bc267"},
             {"name": "Language Preference", "value": "eng_UG"},
             {"name": "Receives Messages As", "value": "text"},
             {"name": "Head of Household Name", "value": "bob"},
