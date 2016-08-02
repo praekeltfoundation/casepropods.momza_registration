@@ -101,6 +101,8 @@ class RegistrationPodTest(BaseCasesTest):
 
         result = self.pod.read_data({'case_id': self.case.id})
 
+        auth_header = responses.calls[0].request.headers['Authorization']
+        self.assertEqual(auth_header, "Token test_token")
         self.assertEqual(result, {"items": []})
 
     @responses.activate
@@ -113,6 +115,8 @@ class RegistrationPodTest(BaseCasesTest):
 
         result = self.pod.read_data({'case_id': self.case.id})
 
+        auth_header = responses.calls[0].request.headers['Authorization']
+        self.assertEqual(auth_header, "Token test_token")
         self.assertEqual(result, {"items": [
             {"name": "Mother Name", "value": "sue"},
             {"name": "Mother Surname", "value": "zin"},
