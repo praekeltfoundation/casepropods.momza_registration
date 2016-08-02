@@ -51,7 +51,6 @@ class RegistrationPodTest(BaseCasesTest):
 
     def registration_callback_no_matches(self, request):
         headers = {'Content-Type': "application/json"}
-        headers = {'Authorization': "Token test_token"}
         resp = {
             'count': 0,
             'next': None,
@@ -62,7 +61,6 @@ class RegistrationPodTest(BaseCasesTest):
 
     def registration_callback_one_match(self, request):
         headers = {'Content-Type': "application/json"}
-        headers = {'Authorization': "Token test_token"}
         resp = {
             "count": 1,
             "next": None,
