@@ -71,7 +71,6 @@ class RegistrationPodTest(BaseCasesTest):
                 "mother_id": "test_id",
                 "validated": True,
                 "data": {
-                    "hoh_surname": "the builder",
                     "hoh_id": "hoh00001-63e2-4acc-9b94-26663b9bc267",
                     "receiver_id": "hoh00001-63e2-4acc-9b94-26663b9bc267",
                     "operator_id": "hcw00001-63e2-4acc-9b94-26663b9bc267",
@@ -125,7 +124,7 @@ class RegistrationPodTest(BaseCasesTest):
             {"name": "Receiver ID", "value":
                 "hoh00001-63e2-4acc-9b94-26663b9bc267"},
             {"name": "Head of Household Name", "value": "bob"},
-            {"name": "Head of Household Surname", "value": "the builder"},
+            {"name": "Head of Household Surname", "value": "Unknown"},
             {"name": "Head of Household ID",
                 "value": "hoh00001-63e2-4acc-9b94-26663b9bc267"},
             {"name": "Operator ID", "value":
