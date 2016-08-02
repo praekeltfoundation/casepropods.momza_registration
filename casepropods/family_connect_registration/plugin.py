@@ -10,7 +10,10 @@ class RegistrationPodConfig(PodConfig):
     token = fields.ConfigText("Authentication token for registration endpoint",
                               required=True)
     field_mapping = fields.ConfigList(
-        "Mapping of field names to what should be displayed for them",
+        "Mapping of field names to what should be displayed for them."
+        "Example:"
+        "[{'field': 'mama_name', 'field_name': 'Mother Name'},"
+        "{'field': 'mama_surname', 'field_name': 'Mother Surname'}],",
         required=True)
 
 
