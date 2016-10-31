@@ -1,5 +1,5 @@
-casepropods.family_connect_registration
-=======================================
+casepropods.momza_registration
+==============================
 
-FamilyConnect registrations data pod for casepro. Returns case specific 
+Mom Connect South Africa registrations data pod for casepro. Returns case specific
 registration information.
